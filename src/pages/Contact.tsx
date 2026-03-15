@@ -13,7 +13,7 @@ const Contact = () => (
           Contact Us
         </motion.h1>
         <p className="mx-auto mt-4 max-w-2xl opacity-90">
-          Got questions or want to join? We'd love to hear from you.
+          Have questions about C.V. Raman Polytechnic? We'd love to hear from you.
         </p>
       </div>
     </section>
@@ -45,7 +45,7 @@ const Contact = () => (
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-sm text-muted-foreground">polytechhub@college.edu</p>
+                  <p className="text-sm text-muted-foreground">info@cvramanpolytechnic.edu</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -64,9 +64,8 @@ const Contact = () => (
                 <div>
                   <h4 className="font-semibold">Address</h4>
                   <p className="text-sm text-muted-foreground">
-                    Government Polytechnic College<br />
-                    Innovation Building, Room 301<br />
-                    Mumbai, Maharashtra 400001
+                    C.V. Raman Polytechnic<br />
+                    Odisha, India
                   </p>
                 </div>
               </div>
