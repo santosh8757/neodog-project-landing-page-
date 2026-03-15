@@ -53,7 +53,7 @@ const Index = () =>
           <Button variant="hero" size="lg" asChild>
             <Link to="/projects">OUR STUDENT</Link>
           </Button>
-          <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+          <Button variant="hero" size="lg" asChild>
             <Link to="/contact">PROJECT</Link>
           </Button>
         </motion.div>
