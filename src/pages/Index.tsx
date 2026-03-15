@@ -51,10 +51,10 @@ const Index = () =>
         className="mt-8 flex flex-wrap gap-4 text-secondary">
         
           <Button variant="hero" size="lg" asChild>
-            <Link to="/projects">Explore Projects</Link>
+            <Link to="/projects">OUR STUDENT</Link>
           </Button>
           <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-            <Link to="/contact">Join the Community</Link>
+            <Link to="/contact">PROJECT</Link>
           </Button>
         </motion.div>
       </div>
