@@ -40,7 +40,7 @@ const Projects = () => (
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex flex-col rounded-lg border border-border bg-card p-6 transition-shadow hover:shadow-md"
+              className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg"
             >
               <h3 className="mb-2 text-lg font-bold">{p.title}</h3>
               <p className="mb-4 flex-1 text-sm text-muted-foreground">{p.desc}</p>
