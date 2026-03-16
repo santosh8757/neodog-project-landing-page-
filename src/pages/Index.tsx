@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Code, Cpu, Users, Trophy, Lightbulb, Rocket, GraduationCap, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/cvrp-campus.jpg";
 
 const stats = [
   { icon: Users, label: "Active Students", value: "500+" },
