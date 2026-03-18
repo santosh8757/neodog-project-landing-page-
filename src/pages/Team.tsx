@@ -10,6 +10,12 @@ const team = [
   { name: "Ananya Rao", reg: "2024006", role: "Web Developer", dept: "Information Technology", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" },
   { name: "Karan Mehta", reg: "2024007", role: "IoT Specialist", dept: "Electronics & Telecom", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" },
   { name: "Divya Nair", reg: "2024008", role: "Content Head", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" },
+  { name: "Rohan Mishra", reg: "2024009", role: "App Developer", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80" },
+  { name: "Meera Joshi", reg: "2024010", role: "Social Media Lead", dept: "Information Technology", photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" },
+  { name: "Amit Verma", reg: "2024011", role: "Hardware Lead", dept: "Electronics & Telecom", photo: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&q=80" },
+  { name: "Pooja Reddy", reg: "2024012", role: "Treasurer", dept: "Mechanical Engineering", photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80" },
+  { name: "Sanjay Kumar", reg: "2024013", role: "Workshop Lead", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80" },
+  { name: "Neha Gupta", reg: "2024014", role: "Documentation Head", dept: "Information Technology", photo: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" },
 ];
 
 const fade = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
