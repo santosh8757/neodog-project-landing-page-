@@ -42,11 +42,11 @@ const Index = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl"
+          className="max-w-3xl text-4xl font-extrabold leading-tight drop-shadow-lg md:text-6xl"
         >
           Empowering Students
           <br className="hidden md:block" />
-          Through Innovation & Skills
+          Through Innovation &amp; Skills
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
