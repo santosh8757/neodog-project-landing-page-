@@ -39,19 +39,17 @@ const Team = () => (
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group rounded-lg border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+              className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-secondary/20">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
+              {/* 4:3 height:width rectangle */}
+              <div className="flex aspect-[3/4] w-full flex-col items-center justify-center rounded-md bg-[#e0e0e0] shadow-md">
+                <h3 className="text-lg font-bold text-foreground">{m.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Reg No: {m.reg}</p>
               </div>
-              <h3 className="font-bold">{m.name}</h3>
-              <p className="text-sm font-medium text-secondary">{m.role}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{m.dept}</p>
+              <div className="p-4 text-center">
+                <p className="text-sm font-semibold text-secondary">{m.role}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{m.dept}</p>
+              </div>
             </motion.div>
           ))}
         </div>
