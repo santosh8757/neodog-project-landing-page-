@@ -1,226 +1,177 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Code, Cpu, Users, Trophy, Lightbulb, Rocket, GraduationCap, Wrench } from "lucide-react";
+import { Bot, Globe, Brain, Settings, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SectionHeading from "@/components/SectionHeading";
-import heroBg from "@/assets/cvrp-campus.jpg";
+import neodogHero from "@/assets/neodog-hero.png";
 
-const stats = [
-  { icon: Users, label: "Active Students", value: "500+" },
-  { icon: Trophy, label: "Awards Won", value: "35+" },
-  { icon: Code, label: "Projects Built", value: "80+" },
-  { icon: Cpu, label: "Workshops Held", value: "50+" },
+const features = [
+  { icon: Bot, label: "Robotics", desc: "Advanced servo-driven quadruped locomotion system" },
+  { icon: Globe, label: "IoT", desc: "Cloud-connected sensors for real-time monitoring" },
+  { icon: Brain, label: "Artificial Intelligence", desc: "Computer vision and autonomous navigation" },
+  { icon: Settings, label: "Automation", desc: "Self-balancing and obstacle avoidance" },
 ];
 
-const highlights = [
-  { icon: GraduationCap, title: "Academic Excellence", desc: "Diploma programs in Computer Science, Electronics, Mechanical, Civil, and Electrical Engineering with industry-aligned curriculum." },
-  { icon: Lightbulb, title: "Innovation Lab", desc: "A dedicated space for students to prototype and experiment with cutting-edge technologies like IoT, robotics, and AI." },
-  { icon: Rocket, title: "Hackathons & Competitions", desc: "Regular hackathons and inter-college technical competitions that challenge students to solve real-world problems." },
-  { icon: Wrench, title: "Hands-on Training", desc: "Practical workshops, industrial visits, and project-based learning that bridge the gap between theory and industry." },
-  { icon: Code, title: "Open Source & Projects", desc: "Students contribute to open-source projects and build tools that benefit the wider community and their portfolios." },
-  { icon: Users, title: "Student Community", desc: "A vibrant network of peers, mentors, and alumni who collaborate, learn together, and grow professionally." },
+const gallery = [
+  { img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80", alt: "Robot dog prototype" },
+  { img: "https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?w=600&q=80", alt: "Circuit assembly" },
+  { img: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&q=80", alt: "Testing phase" },
 ];
 
-const fade = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
+const reviews = [
+  { name: "Arjun Patel", role: "Student, ECE Dept.", text: "Working on NeoDog taught me more about embedded systems than an entire semester of lectures. The hands-on experience is invaluable.", rating: 5 },
+  { name: "Dr. Sneha Rao", role: "Faculty Advisor", text: "NeoDog showcases what students can achieve when given the right tools and mentorship. A truly impressive interdisciplinary project.", rating: 5 },
+];
+
+const fade = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
 
 const Index = () => (
   <>
     {/* Hero */}
-    <section className="relative flex min-h-[85vh] items-center overflow-hidden">
-      <img src={heroBg} alt="C.V. Raman Polytechnic campus" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-[#0000FF]/10" />
-      <div className="container relative z-10 py-20 text-primary-foreground">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-accent to-secondary py-24 text-primary-foreground md:py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(250_80%_70%/0.3),transparent_60%)]" />
+      <div className="container relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:justify-between">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-4 inline-block rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-xl text-center lg:text-left"
         >
-          🎓 Welcome to C.V. Raman Polytechnic, Odisha
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl text-4xl font-extrabold leading-tight drop-shadow-lg md:text-6xl"
-        >
-          Empowering Students
-          <br className="hidden md:block" />
-          Through Innovation &amp; Skills
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-5 max-w-xl text-lg opacity-90"
-        >
-          Discover the talent and technical excellence of our polytechnic community. Explore student projects, achievements, and the innovation that drives us forward.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="mt-8 flex flex-wrap gap-4"
-        >
-          <Button variant="hero" size="lg" asChild>
-            <Link to="/projects">Our Student Projects</Link>
-          </Button>
-          <Button variant="hero" size="lg" asChild>
-            <Link to="/team">Meet Our Team</Link>
-          </Button>
-        </motion.div>
-      </div>
-    </section>
-
-    {/* Stats */}
-    <section className="bg-surface-alt py-14">
-      <div className="container grid grid-cols-2 gap-6 md:grid-cols-4">
-        {stats.map((s, i) => (
-          <motion.div
-            key={s.label}
-            variants={fade}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="flex flex-col items-center rounded-lg bg-card p-6 shadow-sm"
-          >
-            <s.icon className="mb-2 h-8 w-8 text-secondary" />
-            <span className="text-2xl font-bold">{s.value}</span>
-            <span className="text-sm text-muted-foreground">{s.label}</span>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-
-    {/* About Preview */}
-    <section className="py-20">
-      <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading title="About Our Institute" subtitle="C.V. Raman Polytechnic, Odisha is committed to nurturing technically skilled professionals through quality education and hands-on training." />
-          <p className="text-muted-foreground">
-            Established with a vision to provide world-class technical education, our institute offers diploma programs across multiple engineering disciplines. We focus on practical learning, industry readiness, and fostering innovation among students.
+          <span className="mb-4 inline-block rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+            🤖 C.V. Raman Polytechnic Project
+          </span>
+          <h1 className="mt-2 text-4xl font-extrabold leading-tight md:text-6xl">
+            NeoDog – Smart
+            <br />
+            Robot Dog
+          </h1>
+          <p className="mt-5 text-lg opacity-90">
+            An innovative robotics project using AI, IoT, and Automation — designed and built by students of C.V. Raman Polytechnic, Odisha.
           </p>
-          <Button variant="outline" size="lg" className="mt-6" asChild>
-            <Link to="/about">Learn More About Us</Link>
-          </Button>
-        </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+            <Button size="lg" className="bg-primary-foreground text-primary font-semibold hover:bg-primary-foreground/90 shadow-lg" asChild>
+              <Link to="/projects">
+                Explore Project <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-64 md:w-80 lg:w-96"
+        >
+          <img src={neodogHero} alt="NeoDog robot dog" className="drop-shadow-2xl" />
+        </motion.div>
       </div>
     </section>
 
-    {/* Highlights */}
-    <section className="bg-surface-alt py-20">
-      <div className="container">
-        <SectionHeading title="What We Offer" subtitle="From innovation labs to hackathons, we provide students with platforms to learn, create, and lead." />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              variants={fade}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="rounded-lg border border-border bg-card p-8 transition-shadow hover:shadow-md"
-            >
-              <div className="mb-4 inline-flex rounded-md bg-secondary/10 p-3">
-                <h.icon className="h-6 w-6 text-secondary" />
-              </div>
-              <h3 className="mb-2 text-lg font-bold">{h.title}</h3>
-              <p className="text-sm text-muted-foreground">{h.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Student / Team Cards */}
+    {/* Icon Features */}
     <section className="py-20">
       <div className="container">
-        <SectionHeading title="Our Students" subtitle="Meet the talented students of C.V. Raman Polytechnic." />
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {[
-            { name: "Arjun Patel", reg: "2024001", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" },
-            { name: "Priya Sharma", reg: "2024002", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" },
-            { name: "Rahul Desai", reg: "2024003", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" },
-            { name: "Sneha Kulkarni", reg: "2024004", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" },
-            { name: "Vikram Singh", reg: "2024005", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" },
-            { name: "Ananya Rao", reg: "2024006", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" },
-            { name: "Karan Mehta", reg: "2024007", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" },
-            { name: "Divya Nair", reg: "2024008", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" },
-            { name: "Rohan Mishra", reg: "2024009", photo: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80" },
-            { name: "Meera Joshi", reg: "2024010", photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" },
-            { name: "Amit Verma", reg: "2024011", photo: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&q=80" },
-            { name: "Pooja Reddy", reg: "2024012", photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80" },
-            { name: "Sanjay Kumar", reg: "2024013", photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80" },
-            { name: "Neha Gupta", reg: "2024014", photo: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" },
-          ].map((s, i) => (
+        <h2 className="mb-2 text-center text-3xl font-bold">Core Technologies</h2>
+        <p className="mx-auto mb-12 max-w-lg text-center text-muted-foreground">
+          NeoDog combines multiple cutting-edge technologies into one platform.
+        </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f, i) => (
             <motion.div
-              key={s.reg}
-              variants={fade}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-              className="group flex aspect-[3/4] flex-col overflow-hidden rounded-lg border border-border bg-[#f0f0f0] shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-shadow hover:shadow-[0_6px_16px_rgba(0,0,0,0.25)]"
-            >
-              <img
-                src={s.photo}
-                alt={s.name}
-                className="w-full flex-1 object-cover"
-                loading="lazy"
-              />
-              <div className="px-2 py-3 text-center">
-                <h3 className="text-sm font-bold text-foreground sm:text-base">{s.name}</h3>
-                <p className="text-xs text-muted-foreground">Reg No: {s.reg}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-
-    <section className="py-20">
-      <div className="container text-center">
-        <SectionHeading title="Student Projects" subtitle="Our students are building innovative solutions across IoT, AI, Robotics, and Web Development." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { img: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80", title: "Smart Campus IoT", tag: "IoT" },
-            { img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80", title: "AI Attendance System", tag: "AI/ML" },
-            { img: "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=400&q=80", title: "Line-Following Robot", tag: "Robotics" },
-          ].map((p, i) => (
-            <motion.div
-              key={p.title}
+              key={f.label}
               variants={fade}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
+              className="group rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-shadow hover:shadow-lg"
             >
-              <img src={p.img} alt={p.title} className="aspect-video w-full object-cover" loading="lazy" />
-              <div className="p-5">
-                <span className="mb-2 inline-block rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">{p.tag}</span>
-                <h3 className="font-bold">{p.title}</h3>
+              <div className="mx-auto mb-4 inline-flex rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 p-4">
+                <f.icon className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="mb-1 text-lg font-bold">{f.label}</h3>
+              <p className="text-sm text-muted-foreground">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Gallery Preview */}
+    <section className="bg-surface-alt py-20">
+      <div className="container">
+        <h2 className="mb-2 text-center text-3xl font-bold">Project Gallery</h2>
+        <p className="mx-auto mb-12 max-w-lg text-center text-muted-foreground">
+          A glimpse into the build process and final prototype.
+        </p>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {gallery.map((g, i) => (
+            <motion.div
+              key={g.alt}
+              variants={fade}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="overflow-hidden rounded-2xl shadow-md"
+            >
+              <img src={g.img} alt={g.alt} className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/gallery">View Full Gallery</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    {/* Reviews */}
+    <section className="py-20">
+      <div className="container">
+        <h2 className="mb-2 text-center text-3xl font-bold">What People Say</h2>
+        <p className="mx-auto mb-12 max-w-lg text-center text-muted-foreground">
+          Feedback from students and faculty involved in the project.
+        </p>
+        <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
+          {reviews.map((r, i) => (
+            <motion.div
+              key={r.name}
+              variants={fade}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
+            >
+              <div className="mb-3 flex gap-0.5">
+                {Array.from({ length: r.rating }).map((_, j) => (
+                  <Star key={j} className="h-4 w-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="mb-4 text-sm text-muted-foreground italic">"{r.text}"</p>
+              <div>
+                <p className="font-bold text-foreground">{r.name}</p>
+                <p className="text-xs text-muted-foreground">{r.role}</p>
               </div>
             </motion.div>
           ))}
         </div>
-        <Button variant="outline" size="lg" className="mt-8" asChild>
-          <Link to="/projects">View All Projects</Link>
-        </Button>
+        <div className="mt-10 text-center">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/contact">Read All Reviews</Link>
+          </Button>
+        </div>
       </div>
     </section>
 
     {/* CTA */}
-    <section className="bg-primary py-16 text-primary-foreground">
+    <section className="bg-gradient-to-r from-primary to-accent py-16 text-primary-foreground">
       <div className="container text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Ready to Showcase Your Skills?</h2>
+        <h2 className="text-3xl font-bold md:text-4xl">Interested in NeoDog?</h2>
         <p className="mx-auto mt-3 max-w-lg opacity-90">
-          Whether you're into coding, robotics, IoT, or design — there's a place for you at C.V. Raman Polytechnic.
+          Reach out to learn more about the project, collaborate, or see a live demo.
         </p>
-        <Button variant="hero" size="lg" className="mt-8" asChild>
+        <Button size="lg" className="mt-8 bg-primary-foreground text-primary font-semibold hover:bg-primary-foreground/90 shadow-lg" asChild>
           <Link to="/contact">Get in Touch</Link>
         </Button>
       </div>
