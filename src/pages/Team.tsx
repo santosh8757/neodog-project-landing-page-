@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 
 const team = [
-  { name: "Arjun Patel", role: "President", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" },
-  { name: "Priya Sharma", role: "Vice President", dept: "Electronics & Telecom", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" },
-  { name: "Rahul Desai", role: "Technical Lead", dept: "Information Technology", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" },
-  { name: "Sneha Kulkarni", role: "Event Coordinator", dept: "Mechanical Engineering", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" },
-  { name: "Vikram Singh", role: "Design Lead", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" },
-  { name: "Ananya Rao", role: "Web Developer", dept: "Information Technology", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" },
-  { name: "Karan Mehta", role: "IoT Specialist", dept: "Electronics & Telecom", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80" },
-  { name: "Divya Nair", role: "Content Head", dept: "Computer Engineering", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80" },
+  { name: "Arjun Patel", reg: "2024001", role: "President", dept: "Computer Engineering" },
+  { name: "Priya Sharma", reg: "2024002", role: "Vice President", dept: "Electronics & Telecom" },
+  { name: "Rahul Desai", reg: "2024003", role: "Technical Lead", dept: "Information Technology" },
+  { name: "Sneha Kulkarni", reg: "2024004", role: "Event Coordinator", dept: "Mechanical Engineering" },
+  { name: "Vikram Singh", reg: "2024005", role: "Design Lead", dept: "Computer Engineering" },
+  { name: "Ananya Rao", reg: "2024006", role: "Web Developer", dept: "Information Technology" },
+  { name: "Karan Mehta", reg: "2024007", role: "IoT Specialist", dept: "Electronics & Telecom" },
+  { name: "Divya Nair", reg: "2024008", role: "Content Head", dept: "Computer Engineering" },
 ];
 
 const fade = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
@@ -39,19 +39,17 @@ const Team = () => (
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group rounded-lg border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+              className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-secondary/20">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
+              {/* 4:3 height:width rectangle */}
+              <div className="flex aspect-[3/4] w-full flex-col items-center justify-center rounded-md bg-[#e0e0e0] shadow-md">
+                <h3 className="text-lg font-bold text-foreground">{m.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Reg No: {m.reg}</p>
               </div>
-              <h3 className="font-bold">{m.name}</h3>
-              <p className="text-sm font-medium text-secondary">{m.role}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{m.dept}</p>
+              <div className="p-4 text-center">
+                <p className="text-sm font-semibold text-secondary">{m.role}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{m.dept}</p>
+              </div>
             </motion.div>
           ))}
         </div>
