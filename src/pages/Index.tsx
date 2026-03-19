@@ -151,36 +151,39 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Featured Projects Preview */}
+    {/* Student / Team Section */}
     <section className="py-20">
-      <div className="container text-center">
-        <SectionHeading title="Student Projects" subtitle="Our students are building innovative solutions across IoT, AI, Robotics, and Web Development." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { img: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80", title: "Smart Campus IoT", tag: "IoT" },
-            { img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80", title: "AI Attendance System", tag: "AI/ML" },
-            { img: "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=400&q=80", title: "Line-Following Robot", tag: "Robotics" },
-          ].map((p, i) => (
+      <div className="container">
+        <SectionHeading title="Our Team" subtitle="Meet the passionate students driving innovation and community building at C.V. Raman Polytechnic." />
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {team.map((m, i) => (
             <motion.div
-              key={p.title}
+              key={m.name}
               variants={fade}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
+              transition={{ delay: i * 0.04 }}
+              className="group flex aspect-[3/4] flex-col overflow-hidden rounded-lg border-2 border-foreground/15 bg-[#f0f0f0] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-shadow hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
             >
-              <img src={p.img} alt={p.title} className="aspect-video w-full object-cover" loading="lazy" />
-              <div className="p-5">
-                <span className="mb-2 inline-block rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">{p.tag}</span>
-                <h3 className="font-bold">{p.title}</h3>
+              <img
+                src={m.photo}
+                alt={m.name}
+                className="w-full flex-1 object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="px-2 py-3 text-center">
+                <h3 className="text-sm font-bold text-foreground sm:text-base">{m.name}</h3>
+                <p className="text-xs text-muted-foreground">Reg No: {m.reg}</p>
               </div>
             </motion.div>
           ))}
         </div>
-        <Button variant="outline" size="lg" className="mt-8" asChild>
-          <Link to="/projects">View All Projects</Link>
-        </Button>
+        <div className="mt-8 text-center">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/team">View Full Team</Link>
+          </Button>
+        </div>
       </div>
     </section>
 
