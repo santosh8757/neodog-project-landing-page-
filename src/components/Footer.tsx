@@ -9,7 +9,7 @@ const Footer = () => (
             C.V. Raman <span className="text-secondary">Polytechnic</span>
           </h3>
           <p className="text-sm text-muted-foreground">
-            Empowering polytechnic students in Odisha to innovate, collaborate, and showcase their technical excellence.
+            Our team from the 2023–2026 batch of C.V. Raman Polytechnic College is proud to present our innovative project, 'Neobolt', showcasing our skills in robotics and electrical engineering.
           </p>
         </div>
         <div>
