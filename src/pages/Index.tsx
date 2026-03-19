@@ -110,82 +110,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* About Preview */}
-    <section className="py-20">
-      <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading title="About Our Institute" subtitle="C.V. Raman Polytechnic, Odisha is committed to nurturing technically skilled professionals through quality education and hands-on training." />
-          <p className="text-muted-foreground">
-            Established with a vision to provide world-class technical education, our institute offers diploma programs across multiple engineering disciplines. We focus on practical learning, industry readiness, and fostering innovation among students.
-          </p>
-          <Button variant="outline" size="lg" className="mt-6" asChild>
-            <Link to="/about">Learn More About Us</Link>
-          </Button>
-        </div>
-      </div>
-    </section>
 
-    {/* Highlights */}
-    <section className="bg-surface-alt py-20">
-      <div className="container">
-        <SectionHeading title="What We Offer" subtitle="From innovation labs to hackathons, we provide students with platforms to learn, create, and lead." />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              variants={fade}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="rounded-lg border border-border bg-card p-8 transition-shadow hover:shadow-md"
-            >
-              <div className="mb-4 inline-flex rounded-md bg-secondary/10 p-3">
-                <h.icon className="h-6 w-6 text-secondary" />
-              </div>
-              <h3 className="mb-2 text-lg font-bold">{h.title}</h3>
-              <p className="text-sm text-muted-foreground">{h.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
 
-    {/* Student / Team Section */}
-    <section className="py-20">
-      <div className="container">
-        <SectionHeading title="Our Team" subtitle="Meet the passionate students driving innovation and community building at C.V. Raman Polytechnic." />
-        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {team.map((m, i) => (
-            <motion.div
-              key={m.name}
-              variants={fade}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-              className="group flex aspect-[3/4] flex-col overflow-hidden rounded-lg border-2 border-foreground/15 bg-[#f0f0f0] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-shadow hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
-            >
-              <img
-                src={m.photo}
-                alt={m.name}
-                className="w-full flex-1 object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="px-2 py-3 text-center">
-                <h3 className="text-sm font-bold text-foreground sm:text-base">{m.name}</h3>
-                <p className="text-xs text-muted-foreground">Reg No: {m.reg}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/team">View Full Team</Link>
-          </Button>
-        </div>
-      </div>
-    </section>
 
     {/* CTA */}
     <section className="bg-primary py-16 text-primary-foreground">
