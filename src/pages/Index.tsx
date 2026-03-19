@@ -85,6 +85,18 @@ const Index = () => (
           <Button variant="hero" size="lg" asChild>
             <Link to="/team">Meet Our Team</Link>
           </Button>
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/events">Events</Link>
+          </Button>
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/gallery">Gallery</Link>
+          </Button>
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/teacher-review">Teacher Review</Link>
+          </Button>
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/student-review">Student Review</Link>
+          </Button>
         </motion.div>
       </div>
     </section>
