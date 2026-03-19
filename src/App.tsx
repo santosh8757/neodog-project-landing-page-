@@ -11,6 +11,7 @@ import Projects from "./pages/Projects";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import TeacherReview from "./pages/TeacherReview";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
